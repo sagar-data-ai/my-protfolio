@@ -56,19 +56,6 @@ const Projects = () => {
         "Intuitive and fully responsive design",
         "Personalized user experiences with saved preferences"
       ]
-    },
-    {
-      title: "Pressure Cooker Whistle Counter",
-      description: "An innovative Android application born from everyday necessity, designed to automate the mundane task of counting pressure cooker whistles during cooking. This offline-first app utilizes sophisticated audio processing algorithms to detect and count whistles in real-time using the device's microphone, without requiring an internet connection. With a focus on privacy, the application processes all audio data locally and on-the-fly without storing any recordings. The implementation includes custom sound analysis using Fast Fourier Transform (FFT) and Tarsos DSP library to accurately identify the distinctive whistle frequency pattern amid background noise, making cooking precision effortless for users.",
-      tech: ["Java", "Kotlin", "FFT", "Tarsos DSP", "Spectrograms", "Android Media"],
-      image: "/images/whistle-counter-preview.png",
-      liveLink: "",
-      highlights: [
-        "Offline operation for areas with limited connectivity",
-        "Privacy-focused with no data storage",
-        "Real-time audio processing and frequency analysis",
-        "Future ML integration for multi-cooker scenarios"
-      ]
     }
   ];
   
