@@ -5,19 +5,7 @@ const Projects = () => {
   const [activeProject, setActiveProject] = useState(0);
 
   const projects = [
-    {
-      title: "FitBill - Gym Management System",
-      description: "A comprehensive cross-platform solution designed for modern gym businesses that streamlines membership management, attendance tracking, and financial operations. The system automatically sends timely membership renewal notifications, monitors daily facility usage patterns, and provides insightful financial analytics through intuitive dashboards, enabling gym owners to make data-driven decisions and optimize operational efficiency.",
-      tech: ["React Native", "Express.js", "Prisma", "SQL", "AWS Lambda"],
-      image: "/images/fitbill-preview.png",
-      liveLink: "http://youtube.com/watch?v=Dbkf_2kh1ho",
-      highlights: [
-        "Automated membership renewal alerts",
-        "Daily check-in/check-out tracking",
-        "Financial dashboards",
-        "Supports hundreds of daily active users"
-      ]
-    },
+    
     {
       title: "Student Attendance Tracking System",
       description: "An innovative serverless attendance solution leveraging AWS Lambda and Python to deliver cost-effective, real-time attendance tracking for educational institutions. The system employs sophisticated HTML parsing techniques with BeautifulSoup to extract attendance data from various sources, processes it through a highly optimized pipeline, and delivers accurate, instantaneous results to thousands of users daily without incurring operational costs, making it an ideal solution for resource-constrained educational environments.",
