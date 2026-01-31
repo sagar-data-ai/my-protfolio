@@ -7,42 +7,46 @@ const Projects = () => {
   const projects = [
     
     {
-      title: "Student Attendance Tracking System",
-      description: "An innovative serverless attendance solution leveraging AWS Lambda and Python to deliver cost-effective, real-time attendance tracking for educational institutions. The system employs sophisticated HTML parsing techniques with BeautifulSoup to extract attendance data from various sources, processes it through a highly optimized pipeline, and delivers accurate, instantaneous results to thousands of users daily without incurring operational costs, making it an ideal solution for resource-constrained educational environments.",
-      tech: ["AWS Lambda", "Python", "WebSocket", "DynamoDB", "BeautifulSoup"],
-      image: "/images/attendance-preview.png",
-      liveLink: "https://github.com/sri-ganeshk/Attendance_tracker",
+      title: "Chaos to Clarity Dual Data Analysis",
+      description: "A comprehensive exploratory data analysis on the Olist Brazilian E‑commerce dataset comprising 100k+ orders (2016–2018). Conducted in Python, the project compared uncleaned and cleaned data to evaluate the impact of data quality on analytical accuracy and business insight. After cleaning, relationships among price, delivery charges, delivery time, payment type, and customer ratings aligned with real-world commerce behavior—transforming raw information into actionable business intelligence.",
+      tech: ["Python", "NumPy", "Pandas", "Matplotlib", "Seaborn","Statistics", "MySQL", "Power BI",],
+      image: "/images/ecommerce-preview.png",
+      liveLink: "https://github.com/sagar-data-ai/data-analysis-projects/tree/main/project_03_from_chaos_to_clarity_ecommerce_analysis",
       highlights: [
-        "Handles ~3,000 unique daily users",
-        "10,000+ requests/day at zero cost",
-        "Avg response time of 1.5-2 seconds",
-        "Real-time HTML parsing"
+        "Analyzed 115,000+ Brazilian E‑commerce orders across 8 CSV datasets",
+    "Compared uncleaned vs cleaned data in dual EDA pipelines",
+    "Reduced variance in key metrics by up to 90%",
+    "Achieved ~94% accuracy in validated insights (↑ 24% decision reliability)",
+    "Identified delivery‑time → rating correlation (r ≈ –0.41)",
+    "Enabled business strategies for logistics, forecasting, and customer experience"
       ]
     },
     {
-      title: "StudySphere – Curated Learning Platform",
-      description: "An advanced educational platform that revolutionizes self-paced learning through AI-powered content organization and generation. StudySphere allows users to curate and structure courses on any topic with intelligent assistance, automatically generating customized flashcards, comprehensive notes, and interactive quizzes tailored to individual learning preferences. The integration with Google Gemini API enables sophisticated content summarization and knowledge extraction, creating a personalized learning experience that adapts to users' comprehension levels and learning styles.",
-      tech: ["Next.js", "Prisma", "Google Gemini API", "TailwindCSS", "PostgreSQL"],
-      image: "/images/studysphere-preview.png",
-      liveLink: "https://hackthon-six.vercel.app/",
+      title: "Customer Behavior Analysis for Retail Company",
+      description: "An end-to-end data analytics project focused on understanding customer shopping behavior to improve sales, satisfaction, and loyalty. The analysis identifies key purchase drivers such as seasons, discounts, and shipping types, using Python, SQL, and Tableau. The final dashboards transform complex consumer data into actionable insights for marketing and business strategy optimization.",
+      tech: ["Python","NumPy", "Pandas", "SQL", "Matplotlib", "Seaborn", "Power BI", "Tableau"],
+      image: "/images/customer-behaviour-preview.png",
+      liveLink: "https://github.com/sagar-data-ai/data-analysis-projects/tree/main/project_02_customer_behaviour_analysis",
       highlights: [
-        "Automatic flashcards & notes generation",
-        "On-the-fly quizzes",
-        "AI-powered content summarization",
-        "Self-paced, structured learning"
+        "Analyzed 500+ transaction records covering demographics, ratings, and purchase patterns",
+    "Discovered peak order periods (Spring) and highest-value seasons (Fall)",
+    "Built three interactive Tableau dashboards supporting sales, customer, and operational insights",
+    "Found that Standard Shipping received the highest average ratings (3.8) across all delivery modes",
+    "Delivered clear data-driven recommendations to enhance loyalty and marketing strategies"
       ]
     },
     {
-      title: "Movie Review Platform",
-      description: "A modern, fully responsive web application designed for movie enthusiasts to discover, review, and engage with film content. The platform leverages The Movie Database API to provide users with real-time access to a vast library of films, complete with detailed information and high-quality imagery. With a robust user authentication system using JWT tokens, the application delivers personalized experiences allowing users to create accounts, save favorites, and contribute their own reviews to the community. The intuitive interface, built with React and styled with Tailwind CSS, ensures a seamless viewing experience across all devices.",
-      tech: ["React", "Tailwind CSS", "TMDB API", "MongoDB", "JWT", "Responsive Design"],
+      title: "Indian Food Cuisine Analysis",
+      description: "An interactive data analytics project exploring the vast diversity of Indian cuisine — analyzing regional food patterns, dietary preferences, taste profiles, preparation and cooking times, and major ingredients. Built using Python and Streamlit, this project transforms complex culinary data into visual, engaging, and region-wise insights about India's food culture.",
+      tech: ["Python", "Pandas", "Matplotlib", "Seaborn", "Plotly", "Power BI", "Streamlit"],
       image: "/images/movie-review-preview.png",
-      liveLink: "https://movie-review-omega-seven.vercel.app/",
+      liveLink: "https://github.com/sagar-data-ai/data-analysis-projects/tree/main/project_01_indian_foods",
       highlights: [
-        "Real-time movie data integration with TMDB API",
-        "Secure JWT-based user authentication",
-        "Intuitive and fully responsive design",
-        "Personalized user experiences with saved preferences"
+        "Performed exploratory data analysis on 500+ Indian recipes with regional classification.",
+    "Compared dietary types (Vegetarian vs. Non-Vegetarian) and observed regional dominance.",
+    "Analyzed preparation and cooking time trends across North, South, East, and West Indian cuisines.",
+    "Identified key ingredients and flavor patterns defining each state’s signature dishes.",
+    "Deployed a fully interactive Streamlit web app allowing users to explore recipes by region, taste, and ingredients in real-time."
       ]
     }
   ];
