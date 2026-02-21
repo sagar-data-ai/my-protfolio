@@ -23,7 +23,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/resume" element={<ResumeRedirect />} />
+        <Route path="/resume1" element={<ResumeRedirect />} />
         <Route
           path="/*"
           element={

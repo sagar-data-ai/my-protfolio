@@ -37,46 +37,31 @@ const Contact = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    setStatus({ submitting: true, submitted: false, error: null });
+  e.preventDefault();
+  setStatus({ submitting: true, submitted: false, error: null });
 
-    // Format the current date and time in UTC as YYYY-MM-DD HH:MM:SS
-    const now = new Date();
-    const formattedDate = now.toISOString().replace('T', ' ').substring(0, 19);
+  const serviceId  = import.meta.env.VITE_SERVICE_ID;
+  const templateId = import.meta.env.VITE_TEMPLATE_ID;
+  const publicKey  = import.meta.env.VITE_PUBLIC_KEY;
 
-    // EmailJS configuration
-    const serviceId = import.meta.env.VITE_SERVICE_ID;
-    const templateId = import.meta.env.VITE_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_PUBLIC_KEY;
-
-    // Initialize EmailJS with your public key
-    emailjs.init(publicKey);
-
-    // Prepare form data for EmailJS
-    const templateParams = {
-      from_name: formData.name,
-      from_email: formData.email,
-      message: formData.message,
-      to_email: 'sagark749200@gmail.com',
-      date_time: formattedDate,
-      user_login: 'SagarKumar'
-    };
-
-    emailjs.send(serviceId, templateId, templateParams)
-      .then((response) => {
-        console.log('Email sent successfully:', response);
-        setStatus({ submitting: false, submitted: true, error: null });
-        setFormData({ name: '', email: '', message: '' });
-
-        setTimeout(() => {
-          setStatus(prev => ({ ...prev, submitted: false }));
-        }, 5000);
-      })
-      .catch((error) => {
-        console.error('Failed to send email:', error);
-        setStatus({ submitting: false, submitted: false, error: 'Failed to send message. Please try again.' });
-      });
+  const templateParams = {
+    from_name: formData.name,
+    from_email: formData.email,
+    message: formData.message,
+    to_email: "sagark749200@gmail.com"
   };
+
+  emailjs
+    .send(serviceId, templateId, templateParams, publicKey)
+    .then(() => {
+      setStatus({ submitting: false, submitted: true, error: null });
+      setFormData({ name: "", email: "", message: "" });
+    })
+    .catch((err) => {
+      console.error("EmailJS Error:", err);
+      setStatus({ submitting: false, submitted: false, error: "Failed to send message. Please try again." });
+    });
+};
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -198,76 +183,7 @@ const Contact = () => {
                 </div>
               </motion.div>
             </motion.div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <form ref={formRef} onSubmit={handleSubmit} className="bg-primary bg-opacity-40 border border-muted border-opacity-10 p-6">
-              <h3 className="text-xl font-medium mb-6">Send a Message</h3>
-
-              <div className="mb-4">
-                <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full bg-secondary bg-opacity-40 border border-muted border-opacity-30 p-3 text-light focus:outline-none focus:border-light"
-                  required
-                />
-              </div>
-
-              <div className="mb-4">
-                <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full bg-secondary bg-opacity-40 border border-muted border-opacity-30 p-3 text-light focus:outline-none focus:border-light"
-                  required
-                />
-              </div>
-
-              <div className="mb-6">
-                <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows="5"
-                  className="w-full bg-secondary bg-opacity-40 border border-muted border-opacity-30 p-3 text-light focus:outline-none focus:border-light"
-                  required
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className={`btn btn-primary w-full ${status.submitting ? 'opacity-70 cursor-not-allowed' : ''}`}
-                disabled={status.submitting}
-              >
-                {status.submitting ? 'Sending...' : 'Send Message'}
-              </button>
-
-              {status.submitted && (
-                <div className="mt-4 p-3 bg-green-500 bg-opacity-20 border border-green-500 text-green-300 text-center">
-                  Message sent successfully!
-                </div>
-              )}
-
-              {status.error && (
-                <div className="mt-4 p-3 bg-red-500 bg-opacity-20 border border-red-500 text-red-300 text-center">
-                  {status.error}
-                </div>
-              )}
-            </form>
+        
           </motion.div>
         </div>
       </div>
